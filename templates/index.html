@@ -1,0 +1,112 @@
+{% extends 'main.html' %}
+{% block content %}
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+      <li data-target="#demo" data-slide-to="3"></li>
+      <li data-target="#demo" data-slide-to="4"></li>
+    </ul>
+    
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="static/images/image1.jpg" alt="Los Angeles" width="1100" height="300">
+      </div>
+      <div class="carousel-item">
+        <img src="static/images/image2.jpg" alt="Chicago" width="1100" height="300">
+      </div>
+      <div class="carousel-item">
+        <img src="static/images/image6.jpg" alt="New York" width="1100" height="300">
+      </div>
+      <div class="carousel-item">
+        <img src="static/images/image4.jpg" alt="New York" width="1100" height="300">
+      </div>
+      <div class="carousel-item">
+        <img src="static/images/image5.jpg" alt="New York" width="1100" height="300">
+      </div>
+    </div>
+    
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
+
+
+  <!--Cards-->
+  <div class="container">
+  <div class="row">
+  {% for product in products_category %}
+  <a href="#" style="text-decoration: none;">
+  <div class="card" style="width:300px; margin-top: 15px;">
+    <img class="card-img-top" src="{{ product.image.url }}" style="width:100; height: 300;">
+      <p class="card-title" style="text-align: center;">{{ product.category_name }}</p>
+  </div>
+  </a>
+  <hr>
+  {% endfor %}
+  </div>
+  </div>
+
+
+
+  <!-- Footer -->
+  <br>
+  <div class="jumbotron text-center" style="margin-bottom: 0; background-color: #eee;">
+    <div class="row">
+      <div class="col-sm">
+          <h6>Get to Know Us</h6>
+          <a href="#" style="text-decoration: none; font-size: 15px;">About Us</a><br>
+          <a href="#" style="text-decoration: none; font-size: 15px;">Career/Job</a><br>
+          <a href="#" style="text-decoration: none; font-size: 15px;">Gift Cart</a><br>
+      </div>
+      <div class="col-sm">
+          <h6>Connect With Us</h6>
+          <a  href="https://www.facebook.com/mglive987" style="text-decoration: none; font-size: 15px;">Facebook</a><br>
+          <a  href="https://www.facebook.com/mglive987" style="text-decoration: none; font-size: 15px;">Instagram</a><br>
+          <a  href="https://www.facebook.com/mglive987" style="text-decoration: none; font-size: 15px;">Twitter</a><br>
+      </div>
+      <div class="col-sm">
+        <h6>Make Money With Us</h6>
+        <a href="#" style="text-decoration: none; font-size: 15px;">Sell on mystore</a><br>
+        <a href="#" style="text-decoration: none; font-size: 15px;">Become an Affiliate</a>
+      </div>
+    </div>
+  </div>
+
+  <!--Second Footer-->
+  <div class="footer">
+    <h3 style="text-align: center;">mystore</h3>
+    <div style="text-align: center;">
+      <a href="#" style="text-decoration: none; font-size: 14px;">Australia</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">Brazil</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">Canada</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">France</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">Germany</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">Italy</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">Japan</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">Mexico</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">Netherlands</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">Spain</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">United Arab Emirates</a>
+      <a href="#" style="text-decoration: none; font-size: 14px; margin-left: 15px;">United Kingdom</a>
+    </div>
+    <br>
+    <div style="text-align: center;">
+      <a href="#" style="text-decoration: none; font-size: 13px; margin-left: 15px;">Conditions of Use & Sale </a>
+      <a href="#" style="text-decoration: none; font-size: 13px; margin-left: 15px;"> Privacy Notice </a>
+      <a href="#" style="text-decoration: none; font-size: 13px; margin-left: 15px;"> Interest-Based-Ads </a>
+      <span style="font-size: 13px; margin-left: 15px;">© 1996-2021, mystore.com, Inc. or its affiliates</span>
+    </div>
+    <br>
+  </div>
+  
+{% endblock content %}

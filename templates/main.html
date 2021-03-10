@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Django</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/main.css">
+
+  <style>
+    @font-face {
+      font-family: myfirstfont;
+      src: url('https://fonts.googleapis.com/css2?family=Noto+Sans');
+    }
+
+    * {
+      font-family: myfirstfont;
+    }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-grey navbar-white">
+  <a class="navbar-brand" href="{% url 'store:index' %}">mystore</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <form style="width: 55%; margin-left: 0px;">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+      </form>
+    <ul class="navbar-nav" style="margin-left: 50px;">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'store:order' %}">Order</a>
+      </li>
+
+      {% if user.is_authenticated %}
+        <li class="nav-item">
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{ user.first_name }}</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'store:yourAccount' %}">Your Account</a>
+              <a class="dropdown-item" href="{% url 'accounts:logout' %}">Sign Out</a>
+            </div>
+          </div>
+        </li>
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:login' %}">Sign-In</a>
+        </li>
+      {% endif %}
+
+      <li class="nav-item" >
+        <a class="nav-link" href="{% url 'store:wallet' %}">Wallet</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'store:cart' %}">
+          <img id="cart-icon" src="{% static 'images/cart1.png' %}">
+        </a>
+      </li>
+      <p id="cart-total">10</p>
+      
+    </ul>
+  </div>  
+</nav>
+
+{% block content %}
+
+{% endblock content %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
