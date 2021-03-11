@@ -45,7 +45,7 @@
   <div class="container">
   <div class="row">
   {% for product in products_category %}
-  <a href="#" style="text-decoration: none;">
+  <a href="{% url 'store:productList' product.id %}" style="text-decoration: none;">
   <div class="card" style="width:300px; margin-top: 15px;">
     <img class="card-img-top" src="{{ product.image.url }}" style="width:100; height: 300;">
       <p class="card-title" style="text-align: center;">{{ product.category_name }}</p>
