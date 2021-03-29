@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 
-from .models import ProductCategory, Product, ShippingAddress
+from .models import ProductCategory, Product, ShippingAddress, Order, OrderItem, Customer
 
 
 def index(request):
@@ -38,7 +38,7 @@ def shippingAddress(request):
         city = request.POST["city"]
         pin = request.POST["pin"]
         
-        shipping_address = ShippingAddress.objects.create_user(name=name, mobile_number=mobile_number, address=address, city=city, pin=pin)
+        shipping_address = ShippingAddress(name=name, mobile_number=mobile_number, address=address, city=city, pin=pin)
         shipping_address.save()
 
         print("Address is saved!")
