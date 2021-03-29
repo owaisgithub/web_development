@@ -16,7 +16,12 @@ a {
 .heading {
 	color: #444;
 	font-size: 25px;
-  	letter-spacing: 4px;
+    letter-spacing: 4px;
+}
+
+.text {
+    color: #444;
+    font-size: 25px;
 }
 
 .card-width {
