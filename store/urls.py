@@ -13,4 +13,5 @@ urlpatterns = [
     path('your_account_detail', views.yourAccount, name='yourAccount'),
     path('category/products/', views.shippingAddress, name="addressForm"),
     path('success/', views.shippingAddress, name="shippingAddress"),
+    path('update_items', views.updateItems, name='updateItems'),
 ]

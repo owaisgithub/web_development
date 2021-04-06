@@ -14,7 +14,7 @@
 
           {% if user.is_authenticated %}
           <a href="{% url 'store:addressForm' %}" class="btn btn-secondary">Buy Now</a>
-          <button class="btn btn-secondary" style="margin-left: 20px;" onclick="addingCart()">Add to Cart</a>
+          <button class="btn btn-secondary add-items" data-product="{{ product.id }}" data-action="add" style="margin-left: 20px;">Add to Cart</a>
           {% else %}
           <a href="{% url 'accounts:login' %}" class="btn btn-secondary">Buy Now</a>
           <a href="{% url 'accounts:login' %}" class="btn btn-secondary" style="margin-left: 20px;">Add to Cart</a>
